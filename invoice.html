@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Invoice</title>
+        <style>
+        body {
+            display: block;
+            margin: 8px;
+        }
+        #container {
+            margin: 5px;
+            padding: 4px;
+            width: 100%;
+            height: auto;
+        }
+    
+        .header-title{
+            font-size: 16px;
+            color: #6A6969;
+        }
+        .header-row {
+            display: flex;
+            flex-direction: row;
+            float: inline-end;
+        }
+
+        .header-col {
+            flex: 1;
+            /* padding: 10px; */
+            /* margin: 5px; */
+            min-width: 10vw;
+            min-height: auto;
+        }
+        
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .row1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .row2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .row3 {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        
+        .row4 {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        
+        .row5 {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .content1 {
+            /* padding: 10px; */
+            margin: 5px;
+            /* border: 1px solid #000; */
+            min-width: 10vw;
+            height: auto;
+        }
+        .content2 {
+            /* padding: 10px; */
+            margin: 5px;
+            /* margin: 5px 5px 5px 170px; */
+            font-size: 26px;
+            /* border: 1px solid #000; */
+            width: 166px;
+            height: auto
+        }
+        .content3 {
+            /* padding: 10px; */
+            margin: 5px;
+            /* border: 1px solid #000; */
+            min-width: 10vw;
+            height: auto;
+            text-align: end;
+        }
+        .col-6 {
+            /* padding: 10px; */
+            margin: 5px;
+            width: 50%;
+            height: auto;
+            line-height: 4.5px;
+            text-align: start;
+        }
+        .col-6-1 {
+            /* padding: 10px; */
+            margin: 5px;
+            width: 50%;
+            height: auto;
+        }
+        .due-amt-sec{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border: 0.5px solid #132768;
+            background-color: #2980B9;
+            color: white;
+            height: 20px;
+            padding: 6px
+        }
+        .issue-info{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 18px;
+        }
+        .issue-info-left{
+            flex: 1;
+            width: 100%;
+            text-align: end;
+            line-height: 7.5px;
+        }
+        .issue-info-right{
+            flex: 1;
+            width: 100%;
+            text-align: end;
+            line-height: 7.5px;
+        }
+
+        .wrapped-text {
+            word-wrap: break-word;
+            /* Optional styling */
+            /* padding: 10px; */
+            max-width: 350px;
+            line-height: 1.5;
+        }
+        .text{
+            font-size: small;
+        }
+
+        .bill-to{
+            flex: 1;
+            width: 50%;
+            text-align: start;
+            line-height: 4.5px;
+            margin-top: 20px;
+            font-size: small;
+        }
+
+        .ship-to{
+            flex: 1;
+            width: 50%;
+            text-align: start;
+            line-height: 4.5px;
+            margin-top: 20px;
+            font-size: small;
+        }
+
+        .signature-sec-left{
+            flex: 1;
+            width: 50%;
+            text-align: end;
+            line-height: 4.5px;
+            margin-top: 30px;
+        }
+        .signature-sec-right{
+            flex: 1;
+            width: 50%;
+            text-align: end;
+            line-height: 4.5px;
+            margin-top: 30px;
+            margin-right: 15px;
+        }
+
+        .signature-lbl{
+            margin-right: 30px;
+        }
+
+        .th-header{
+            background-color: #2980B9;
+            color: white;
+            font-size: larger;
+        }
+
+        .table{
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        th{
+            padding: 6px;
+        }
+        
+        td{
+            padding: 6px;
+            font-size: 14px;
+        }
+
+        .left{
+            text-align: left;
+        }
+        
+        .right{
+            text-align: right;
+        }
+
+        .product-title{
+            color: #2980B9;
+        }
+
+        .percent-gst{
+            font-size: 10px;
+        }
+
+        .footer-sec-left{
+            flex: 1;
+            width: 50%;
+            text-align: start;
+            line-height: 4.5px;
+            margin-top: 30px;
+        }
+        .footer-sec-right{
+            flex: 1;
+            width: 50%;
+            text-align: end;
+            line-height: 4.5px;
+            margin-top: 30px;
+        }
+
+        .bg-title{
+            color: #2980B9;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div class="header-row">
+                    <h3 class="header-title header-col">Original for recipient</h3>
+                </div>
+                <div class="row">
+                    <h1 class="content1">innovative</h1>
+                    <div class="content2">TAX INVOICE</div>
+                    <h1 class="content3">#1</h1>
+                </div>
+            </div>
+            <div id="content-body">
+                <div class="row1">
+                    <div class="col-6">
+                        <p class="text">Jaipur, RJ (08), IN</p> 
+                        <p class="text">+915231045977</p> 
+                        <p class="text">sumit.pareek1992@gmail.com</p> 
+                        <p class="text">GSTIN: GSTN12345LKJH1Y Contact Name: Sumit Sharma</p> 
+                    </div>
+                    <div class="col-6-1">
+                        <div class="due-amt-sec">
+                            <div>Amount Due:</div>
+                            <div>₹236.00</div>
+                        </div>
+                        <div class="issue-info">
+                            <div class="issue-info-left">
+                                <p class="text">Issue Date:</p>
+                                <p class="text">Due Date:</p>
+                                <p class="text">PO Date:</p>
+                                <p class="text">Place of Supply:</p>
+                            </div>
+                            <div class="issue-info-right">
+                                <p class="text">03 - Jan - 2024</p>
+                                <p class="text">02 - Feb - 2024</p>
+                                <p class="text">01 - Jan - 2024</p>
+                                <p class="text">RJ (08)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="bill-to">
+                        <p><strong>Bill To</strong></p>
+                        <p><strong>test company</strong></p>
+                        <p>Suresh Sh 9255897412</p>
+                        <p>164 tara nagar vistar, Jaipur, RJ (08) 302012, IN</p>
+                        <p>Rahul@yopmail.com 915566774499</p>
+                        <p>GSTIN: 08AATFB5255H1Z3 PAN: GFCPS2555D LST: CST:</p>
+                    </div>
+                    <div class="ship-to">
+                        <p><strong>Ship To</strong></p>
+                        <p><strong>innovae co ltd</strong></p>
+                        <p>Suresh Sh 9255897412</p>
+                        <p>145 ruhul nagar vistart, Jaipur, RJ (08) 302012, IN</p>
+                    </div>
+                </div>
+                <div class="row3">
+                    <table class="table">
+                        <thead class="th-header"> 
+                            <tr>
+                                <th>S.No</th>
+                                <th class="left">Item Description</th>
+                                <th class="right">HSN/SAC</th>
+                                <th class="right">Qty UoM</th>
+                                <th class="right">Price (₹)</th>
+                                <th class="right">Taxable Value (₹)</th>
+                                <th class="right">CGST (₹)</th>
+                                <th class="right">SGST (₹)</th>
+                                <th class="right">IGST (₹)</th>
+                                <th class="right">Amount (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="left">
+                                    <span class="product-title">MY PRODUCT</span> <br>
+                                    my description
+                                </td>
+                                <td class="right">123456</td>
+                                <td class="right">
+                                    1
+                                    BAG
+                                </td>
+                                <td class="right">200.00</td>
+                                <td class="right">200.00</td>
+                                <td class="right">18.00 <br>
+                                    <span class="percent-gst">9%</span>
+                                </td>
+                                <td class="right">18.00 <br>
+                                    <span class="percent-gst">9%</span>
+                                </td>
+                                <td class="right">00.00 <br>
+                                    <span class="percent-gst">9%</span>
+                                </td>
+                                <td class="right">236.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="right">
+                                    Total @18%
+                                </td>
+                                <td class="right">200.00</td>
+                                <td class="right">200.00</td>
+                                <td class="right">18.00 </td>
+                                <td class="right">00.00 </td>
+                                <td class="right">236.00 </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" class="right">
+                                    Total Taxable Value <br>
+                                    Total Value (in figure) <br>
+                                    Total Value (in words)
+                                </td>
+                                <td colspan="5" class="right">
+                                    ₹ 200.00 <br>
+                                    ₹ 236 <br>
+                                    ₹ Two Hundred Thirty-six Only
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="row4">
+                    <div class="signature-sec-left"></div>
+                    <div class="signature-sec-right">
+                        <p>-----------------------------</p>
+                        <p class="signature-lbl">Provider Signature</p>
+                    </div>
+                </div>
+                <div class="row5">
+                    <div class="footer-sec-left">
+                        <p>Tax Invoice made with <span class="bg-title">Sleek Bill</span>.</p>
+                    </div>
+                    <div class="footer-sec-right"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
